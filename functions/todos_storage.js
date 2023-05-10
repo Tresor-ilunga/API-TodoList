@@ -8,10 +8,14 @@ const path = 'storage/todos.json'
  * @property {number} id
  * @property {string} title
  * @property {boolean} completed
+ * 
+ * @author tresor-ilunga <ilungat82@gmail.com>
  */
 
 /**
  * @returns {Promise<Todo[]>}
+ * 
+ * @author tresor-ilunga <ilungat82@gmail.com>
  */
 export async function findTodos () {
     const data = await readFile(path, 'utf-8')
@@ -23,6 +27,8 @@ export async function findTodos () {
  * @param {string} title
  * @param {boolean} completed
  * @returns {Promise<Todo>}
+ * 
+ * @author tresor-ilunga <ilungat82@gmail.com>
  */
 export async function createTodo ({title, completed = false}) {
     const todo = {title, completed, id: Date.now()}
@@ -35,6 +41,8 @@ export async function createTodo ({title, completed = false}) {
  * 
  * @param {boolean} id 
  * @returns {Promise}
+ * 
+ * @author tresor-ilunga <ilungat82@gmail.com>
  */
 export async function removeTodo (id) {
     const todos = await findTodos()
@@ -50,6 +58,8 @@ export async function removeTodo (id) {
  * @param {number} id
  * @param {{completed?: boolean, title?: string}} partialTodo
  * @returns {Promise<Todo>}
+ * 
+ * @author tresor-ilunga <ilungat82@gmail.com>
  */
 export async function UpdateTodo (id, partialTodo) {
     const todos = await findTodos()
